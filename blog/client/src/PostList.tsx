@@ -8,7 +8,7 @@ function PostList() {
 
   useEffect(() => {
     async function getPosts() {
-      const posts_response = await axios.get("http://localhost:4000/post");
+      const posts_response = await axios.get("http://localhost:4002/posts");
       setPosts(posts_response.data);
     }
 
@@ -28,7 +28,7 @@ function PostList() {
         </div>
 
         <div className="card-footer">
-          <CommentList postId={post.id} />
+          <CommentList comments={post.comments} />
         </div>
       </div>
     );
